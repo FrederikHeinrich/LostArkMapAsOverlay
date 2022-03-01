@@ -1,0 +1,61 @@
+body {
+    background-color: transparent !important;
+}
+
+.navbar {
+    -webkit-app-region: drag;
+}
+
+.navbar>* {
+    -webkit-app-region: none;
+}
+
+.nav-time-display {
+    -webkit-app-region: drag;
+    user-select: none;
+}
+
+nav {
+    border-radius: 10px;
+}
+
+.content-area-body {
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0px;
+    padding-bottom: 0px;
+    mask-image: linear-gradient(left to right, transparent 100%, rgba(0, 0, 0, 1.0) 100%, transparent 100%);
+}
+
+#content_area_map {
+    padding-bottom: 0px !important;
+    -webkit-mask-image: linear-gradient(to left, #00000000 0%, #FFFFFF 15%, #FFFFFF 85%, #00000000 100%);
+}
+
+.leaflet-container {
+    background: transparent !important;
+}
+
+.bg-light {
+    background: transparent !important;
+}
+
+.leaflet-control-attribution {
+    visibility: hidden;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.leaflet-top .navbar {
+    transition: opacity 1s
+}
+
+.map-sidebar-content {
+    background-color: var(--gray);
+}
+
+#content_settings {
+    overflow: visible;
+}
