@@ -1,6 +1,6 @@
 {
-  "name": "overlay",
-  "productName": "overlay",
+  "name": "lostarkmapasoverlay",
+  "productName": "LostArkMapAsOverlay",
   "version": "1.0.4.1",
   "description": "My Electron application description",
   "main": "src/index.js",
