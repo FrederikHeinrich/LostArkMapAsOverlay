@@ -1,14 +1,12 @@
 const {
   app,
   BrowserWindow,
-  dialog
+  autoUpdater,
+  dialog,
+
 } = require('electron');
 const path = require('path');
 const fs = require('fs');
-const {
-  autoUpdater
-} = require("electron-updater")
-
 const isDev = require("electron-is-dev")
 
 app.disableHardwareAcceleration();
@@ -19,7 +17,16 @@ if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
-require('update-electron-app')()
+require('update-electron-app')({
+  repo: 'frederikheinrich/lostarkmapasoverlay',
+  updateInterval: '5 minutes',
+  logger: require('electron-log')
+})
+
+const server = 'https://update.electronjs.org'
+const feed = `${server}/frederikheinrich/lostarkmapasoverlay/${process.platform}-${process.arch}/${app.getVersion()}`
+
+autoUpdater.setFeedURL(feed)
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
@@ -46,9 +53,9 @@ const createWindow = () => {
       .then(console.log('JavaScript Executed Successfully'));
 
   });
-  if (!isDev) {
+  if (!isDev)
     autoUpdater.checkForUpdates();
-  }
+
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
 };
