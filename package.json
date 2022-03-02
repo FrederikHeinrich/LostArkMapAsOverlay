@@ -1,7 +1,7 @@
 {
   "name": "lostarkmapasoverlay",
   "productName": "LostArkMap as Overlay",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
@@ -18,8 +18,7 @@
   "config": {
     "forge": {
       "packagerConfig": {},
-      "makers": [
-        {
+      "makers": [{
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "overlay"
@@ -40,18 +39,16 @@
           "config": {}
         }
       ],
-      "publishers": [
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "frederikheinrich",
-              "name": "LostArkMapAsOverlay"
-            },
-            "draft": true
-          }
+      "publishers": [{
+        "name": "@electron-forge/publisher-github",
+        "config": {
+          "repository": {
+            "owner": "frederikheinrich",
+            "name": "LostArkMapAsOverlay"
+          },
+          "draft": true
         }
-      ]
+      }]
     }
   },
   "dependencies": {
