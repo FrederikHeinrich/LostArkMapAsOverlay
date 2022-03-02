@@ -45,7 +45,8 @@
           "repository": {
             "owner": "frederikheinrich",
             "name": "LostArkMapAsOverlay"
-          }
+          },
+          "draft": true
         }
       }]
     }
