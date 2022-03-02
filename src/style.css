@@ -48,7 +48,8 @@ nav {
     opacity: 0;
 }
 
-.leaflet-top .navbar {
+.leaflet-top,
+.navbar {
     transition: opacity 1s
 }
 
