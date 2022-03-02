@@ -1,7 +1,7 @@
 {
   "name": "overlay",
   "productName": "overlay",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
@@ -13,16 +13,12 @@
   },
   "publish": null,
   "keywords": [],
-  "author": {
-    "name": "Freddi",
-    "email": "mail@FrederikHeinrich.de"
-  },
+  "author": "Freddi <mail@FrederikHeinrich.de>",
   "license": "MIT",
   "config": {
     "forge": {
       "packagerConfig": {},
-      "makers": [
-        {
+      "makers": [{
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "overlay"
@@ -42,13 +38,22 @@
           "name": "@electron-forge/maker-rpm",
           "config": {}
         }
-      ]
+      ],
+      "publishers": [{
+        "name": "@electron-forge/publisher-github",
+        "config": {
+          "repository": {
+            "owner": "frederikheinrich",
+            "name": "LostArkMapAsOverlay"
+          }
+        }
+      }]
     }
   },
   "dependencies": {
     "electron-is-dev": "^2.0.0",
     "electron-squirrel-startup": "^1.0.0",
-    "electron-updater": "^4.6.5"
+    "update-electron-app": "^2.0.1"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.63",
@@ -56,11 +61,20 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.63",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
     "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "@electron-forge/publisher-github": "^6.0.0-beta.63",
     "electron": "17.1.0"
   },
   "build": {
     "extraResources": [
       "./public/**"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrederikHeinrich/LostArkMapAsOverlay.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FrederikHeinrich/LostArkMapAsOverlay/issues"
+  },
+  "homepage": "https://github.com/FrederikHeinrich/LostArkMapAsOverlay#readme"
 }

@@ -19,6 +19,7 @@ if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
+require('update-electron-app')()
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
