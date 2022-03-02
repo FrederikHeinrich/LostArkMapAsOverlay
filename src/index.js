@@ -37,6 +37,7 @@ const createWindow = () => {
     transparent: true,
     alwaysOnTop: true,
     vibrancy: 'ultra-dark',
+    icon: path.join(__dirname, 'mokokostatue.png')
   });
 
   mainWindow.setAlwaysOnTop(true, 'screen');
