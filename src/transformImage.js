@@ -55,8 +55,11 @@ setInterval(() => {
 
 document.body.style.backgroundColor = 'transparent';
 
+var isFocus = false;
+var withBG = false;
 window.onblur = function () {
     console.log('blur')
+    isFocus = false;
     var elelist = document.getElementsByClassName('leaflet-top');
     Array.prototype.forEach.call(elelist, function (ele) {
         ele.classList.add('hide');
@@ -67,7 +70,8 @@ window.onblur = function () {
     });
 }
 window.onfocus = function () {
-    console.log('focus')
+    console.log('focus');
+    isFocus = true;
     var elelist = document.getElementsByClassName('leaflet-top');
     Array.prototype.forEach.call(elelist, function (ele) {
         ele.classList.remove('hide');
@@ -76,5 +80,20 @@ window.onfocus = function () {
     Array.prototype.forEach.call(elelist, function (ele) {
         ele.classList.remove('hide');
     });
+}
 
+document.addEventListener('keypress', logKey);
+
+function logKey(e) {
+    if (e.code == 'KeyB') {
+        if (isFocus) {
+            if (withBG) {
+                withBG = false;
+                document.children[0].style.backgroundColor = null;
+            } else {
+                withBG = true;
+                document.children[0].style.backgroundColor = '#202528';
+            }
+        }
+    }
 }
